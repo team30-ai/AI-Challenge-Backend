@@ -5,7 +5,7 @@ steps:
 #Push Image to Artifact Registry
 - name: 'gcr.io/cloud-builders/docker'
   args: ['push', 'europe-west1-docker.pkg.dev/aichallenge25/ai-challenge-backend-docker-gcr-repo/ai-challenge-backend-docker-gcr-image:tag1']
-#Deploy to Google Cloud run
+#Deploy to Google Cloud run here
 - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
   entrypoint: gcloud
   args: ['run', 'deploy', 'ai-challenge-backend-docker-gcr-image', '--image','europe-west1-docker.pkg.dev/aichallenge25/ai-challenge-backend-docker-gcr-repo/ai-challenge-backend-docker-gcr-image:tag1', '--region', 'europe-west1']
